@@ -234,7 +234,7 @@ export default function Scoreboard({
                   src={e.selfie}
                   className="aspect-square w-12 rounded-full"
                 />
-                <span className="max-w-32 w-min text-left wrap-break-word whitespace-normal">
+                <span className="max-w-48 w-min text-left wrap-break-word whitespace-nowrap">
                   {e.team_name}
                 </span>
                 <span className="ml-auto text-base">{e.score}</span>
