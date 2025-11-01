@@ -119,7 +119,7 @@ export default function AddScore({ isAdmin = false }: { isAdmin?: boolean }) {
               className="w-full justify-between"
             >
               {value
-                ? groups.find((group) => group.value === value)?.label
+                ? groups.find((group) => `Group ${group.value}` === value)?.label
                 : "Select group..."}
               <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
