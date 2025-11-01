@@ -69,7 +69,9 @@ export default function Scoreboard({
       if (!teamName) {
         return "ERROR";
       }
-      const { data, error } = await supabase.from("zestquest_25_score").select();
+      const { data, error } = await supabase
+        .from("zestquest_25_score")
+        .select();
       if (error) {
         console.log(error);
         return error;
@@ -87,15 +89,15 @@ export default function Scoreboard({
         if (
           "score" in
           teamName.filter((e) => {
-            return e.letter == score.team_id;
+            return `Group ${e.letter}` == score.team_id;
           })[0]
         ) {
           teamName.filter((e) => {
-            return e.letter == score.team_id;
+            return `Group ${e.letter}` == score.team_id;
           })[0].score += score.score;
         } else {
           teamName.filter((e) => {
-            return e.letter == score.team_id;
+            return `Group ${e.letter}` == score.team_id;
           })[0].score = score.score;
         }
       }
@@ -147,7 +149,7 @@ export default function Scoreboard({
       )}
       <div className="h-fit">
         <h1 className="text-3xl text-center flex flex-col gap-2 font-bold pt-2">
-          <span>ZestQuest 2024</span>
+          <span>ZestQuest 2025</span>
         </h1>
         <div className="text-center italic text-sm h-5">
           <span>{isFrozen ? "Leaderboard Frozen" : ""}</span>
